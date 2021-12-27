@@ -1,0 +1,2 @@
+applog: 2019/09/19 13:22:30 main.go:25: hello
+applog: 2019/09/19 13:30:19 main.go:11: hello
