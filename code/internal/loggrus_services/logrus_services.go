@@ -1,7 +1,7 @@
 package loggrus_services
 
 import (
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"io"
 	logging "log"
 	"os"

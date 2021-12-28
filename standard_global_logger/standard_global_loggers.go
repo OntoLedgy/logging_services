@@ -10,10 +10,15 @@ import (
 	"time"
 )
 
+//TODO add contract and wrappers here - move to code folder and hide implementation details.
+//TODO add factory
+
 var errorlog *os.File
 var Global_logger *log.Logger
 
-func Start_logger(log_folder_name, log_file_name_prefix string) {
+func Start_logger(
+	log_folder_name,
+	log_file_name_prefix string) {
 	directory_cleanup(log_folder_name)
 	initialise_logger(log_folder_name, log_file_name_prefix)
 
@@ -73,9 +78,6 @@ func initialise_logger(baseFilePath, log_file_name_prefix string) {
 	if err != nil {
 		log.Fatalf("main : Start : Failed to Create log file : %s : %s\n", fileName, err)
 	}
-	//log_file_name := fmt.Sprintf("%v_%v.log", log_file_name_prefix+"_log", time.Now().UTC().Format("2006-01-02T150405.000"))
-
-	//errorlog, err := os.OpenFile(log_file_name,  os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 
 	Global_logger = log.New(logf, "applog: ", log.Lshortfile|log.LstdFlags)
 }
