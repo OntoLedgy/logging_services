@@ -12,7 +12,7 @@ func Start(log_directory string) {
 	current_directory, _ := os.Getwd()
 
 	logdir := current_directory + log_directory
-	filePrefix := "test"
+	filePrefix := "testing"
 
 	err := globalLog.SetHandlers(logdir, filePrefix)
 
