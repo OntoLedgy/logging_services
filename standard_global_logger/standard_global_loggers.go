@@ -6,16 +6,19 @@ import (
 
 //var errorlog *os.File
 
+var LoggingService *file_logging_services.FileLoggingServiceFactory
+
 func Start_logger(
 	log_folder_name,
 	log_file_name_prefix string) *file_logging_services.FileLoggingServiceFactory {
 
-	logging_service :=
+	loggingService :=
 		new(
 			file_logging_services.FileLoggingServiceFactory)
 
-	logging_service.Create(
+	loggingService.Create(
 		log_folder_name,
 		log_file_name_prefix)
-	return logging_service
+
+	return loggingService
 }
