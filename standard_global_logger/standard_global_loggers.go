@@ -12,13 +12,13 @@ func Start_logger(
 	log_folder_name,
 	log_file_name_prefix string) *file_logging_services.FileLoggingServiceFactory {
 
-	loggingService :=
+	LoggingService =
 		new(
 			file_logging_services.FileLoggingServiceFactory)
 
-	loggingService.Create(
+	LoggingService.Create(
 		log_folder_name,
 		log_file_name_prefix)
 
-	return loggingService
+	return LoggingService
 }
