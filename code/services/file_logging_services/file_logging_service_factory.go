@@ -16,7 +16,7 @@ type FileLoggingServiceFactory struct {
 	Global_logger *log.Logger
 }
 
-func (file_logging_service FileLoggingServiceFactory) Create(
+func (file_logging_service *FileLoggingServiceFactory) Create(
 	log_folder_name,
 	log_file_name_prefix string) {
 
@@ -30,14 +30,14 @@ func (file_logging_service FileLoggingServiceFactory) Create(
 }
 
 func (
-	file_logging_service FileLoggingServiceFactory) Log_info(
+	file_logging_service *FileLoggingServiceFactory) Log_info(
 	message interface{}) {
 
 	file_logging_service.Global_logger.Print(message)
 }
 
 func (
-	file_logging_service FileLoggingServiceFactory) Log_info_formated(
+	file_logging_service *FileLoggingServiceFactory) Log_info_formated(
 	format string,
 	data interface{}) {
 
@@ -45,12 +45,12 @@ func (
 }
 
 func (
-	file_logging_service FileLoggingServiceFactory) End_logger() {
+	file_logging_service *FileLoggingServiceFactory) End_logger() {
 
 }
 
 func (
-	file_logging_service FileLoggingServiceFactory) initialise_logger(
+	file_logging_service *FileLoggingServiceFactory) initialise_logger(
 	baseFilePath,
 	log_file_name_prefix string) {
 
@@ -78,7 +78,7 @@ func (
 }
 
 func (
-	file_logging_service FileLoggingServiceFactory) directory_cleanup(
+	file_logging_service *FileLoggingServiceFactory) directory_cleanup(
 	baseFilePath string) {
 
 	fileInfos, _ := ioutil.ReadDir(baseFilePath)
